@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Mata Mosquito</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="mata_mosquito.js">
+
+    </script>
+</head>
+
+<!--
+    No body está a chamada da função que recupera o tamanho do browser quando ele for redimensionado
+-->
+
+<body onresize="tamanhoPalcoJogo()">
+
+    <!--Adicionando painel-->
+    <div class="painel">
+        <div class="vidas">
+            <!--Adicionando vidas ao painel-->
+            <img id="vida1" src="imagens/coracao_cheio.png" alt="">
+            <img id="vida2" src="imagens/coracao_cheio.png" alt="">
+            <img id="vida3" src="imagens/coracao_cheio.png" alt="">
+        </div>
+        <div class="tempo">
+            <!--Tempo restante do timer-->
+            Tempo restante: <span id="cronometro"></span>
+        </div>
+    </div>
+    <script>
+        document.getElementById('cronometro').innerHTML = tempo
+        //Intervalo para que apareça os mosquitos
+        var criaMosquito = setInterval(function () {
+            posicaoRandomica()
+        }, mosquitoTempo)
+    </script>
+</body>
+
+</html>
